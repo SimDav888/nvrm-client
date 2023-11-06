@@ -1,7 +1,7 @@
 
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
-import {serverIp} from "../serverIp"
+import {serverIp, serverProtocol} from "../serverConnection"
 
 export default function Create() {
  const [form, setForm] = useState({
@@ -22,7 +22,7 @@ export default function Create() {
     // When a post request is sent to the create url, we'll add a new record to the database.
    const newPerson = { ...form };
    console.log("newPerson:",newPerson);
-    await fetch(`http://${serverIp}:5000/record/add`, {
+    await fetch(`${serverProtocol}://${serverIp}:5000/record/add`, {
      method: "POST",
      headers: {
        "Content-Type": "application/json",

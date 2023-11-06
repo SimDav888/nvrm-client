@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import {serverIp} from "../serverIp"
+import {serverIp, serverProtocol} from "../serverConnection"
 const Record = (props) => (
   <tr>
     <td>{props.record.name}</td>
@@ -30,7 +30,7 @@ export default function RecordList() {
     try{
     console.log("   async function getRecords()");
     let response;
-      response = await fetch(`http://${serverIp}:5000/record/`);
+      response = await fetch(`${serverProtocol}://${serverIp}:5000/record/`);
       // if (!response.ok) {
       //  const message = `An error occurred: ${response.statusText}`;
       //  window.alert(message);
@@ -55,7 +55,7 @@ export default function RecordList() {
   // }, [records.length]);
   // This method will delete a record
   async function deleteRecord(id) {
-    await fetch(`http://${serverIp}:5000/${id}`, {
+    await fetch(`${serverProtocol}://${serverIp}:5000/${id}`, {
       method: "DELETE",
     });
     const newRecords = records.filter((el) => el._id !== id);
