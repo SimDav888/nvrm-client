@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import {serverIp} from "../serverIp"
 const Record = (props) => (
   <tr>
     <td>{props.record.name}</td>
@@ -25,10 +26,11 @@ export default function RecordList() {
   const [records, setRecords] = useState([]);
 
   const getRecords = async function(){
+    console.log('serverIp:',serverIp);
     try{
     console.log("   async function getRecords()");
     let response;
-      response = await fetch(`http://localhost:5000/record/`);
+      response = await fetch(`http://${serverIp}:5000/record/`);
       // if (!response.ok) {
       //  const message = `An error occurred: ${response.statusText}`;
       //  window.alert(message);
