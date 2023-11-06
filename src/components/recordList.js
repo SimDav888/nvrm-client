@@ -55,7 +55,7 @@ export default function RecordList() {
   // }, [records.length]);
   // This method will delete a record
   async function deleteRecord(id) {
-    await fetch(`http://localhost:5000/${id}`, {
+    await fetch(`http://${serverIp}:5000/${id}`, {
       method: "DELETE",
     });
     const newRecords = records.filter((el) => el._id !== id);
