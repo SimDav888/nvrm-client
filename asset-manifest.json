@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/nvrm-client/static/css/main.b046793a.css",
-    "main.js": "/nvrm-client/static/js/main.aad0e96f.js",
+    "main.js": "/nvrm-client/static/js/main.9b15dda7.js",
     "index.html": "/nvrm-client/index.html",
     "main.b046793a.css.map": "/nvrm-client/static/css/main.b046793a.css.map",
-    "main.aad0e96f.js.map": "/nvrm-client/static/js/main.aad0e96f.js.map"
+    "main.9b15dda7.js.map": "/nvrm-client/static/js/main.9b15dda7.js.map"
   },
   "entrypoints": [
     "static/css/main.b046793a.css",
-    "static/js/main.aad0e96f.js"
+    "static/js/main.9b15dda7.js"
   ]
 }
